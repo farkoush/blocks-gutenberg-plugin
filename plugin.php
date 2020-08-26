@@ -13,9 +13,6 @@ function loadMyBlockFiles() {
     array('wp-blocks', 'wp-i18n', 'wp-editor'),
     true
   );
-  register_block_type('hooraweb/custom-cta',array(
-      'editor-script' => 'my-super-unique-handle'
-  ));
 }
  
 add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
