@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Plugin Name: sample-block
+ * Plugin Name: Simple Block Gutenberg
  * Author: hananeh
  * Version: 1.0.0
  */
@@ -17,37 +17,30 @@ function loadMyBlockFiles() {
  
 add_action('enqueue_block_editor_assets', 'loadMyBlockFiles');
 
-/* To make your block "dynamic" uncomment
-  the code below and in your JS have your "save"
-  method return null
-*/
 
-/*
-function borderBoxOutput($props) {
-  return '<h3 style="border: 5px solid' . $props['color'] . '">' . $props['content'] . '</h3>';
-}
+// function shaiful_gutenberg_notice_block_admin() {
+//    wp_enqueue_script(
+//       'gutenberg-notice-block-editor',
+//       plugins_url( 'block.js', __FILE__ ),
+//       array( 'wp-blocks', 'wp-element' )
+//    );
 
-register_block_type( 'brad/border-box', array(
-  'render_callback' => 'borderBoxOutput',
-) );
-*/
+//    wp_enqueue_style(
+//       'gutenberg-notice-block-editor',
+//       plugins_url( 'block.css', __FILE__ ),
+//       array()
+//    );
+// }
 
-/* To Save Post Meta from your block uncomment
-  the code below and adjust the post type and
-  meta name values accordingly. If you want to
-  allow multiple values (array) per meta remove
-  the 'single' property.
-*/
+// add_action( 'enqueue_block_editor_assets', 'shaiful_gutenberg_notice_block_admin' );
 
-/*
-function myBlockMeta() {
-  register_meta('post', 'color', array('show_in_rest' => true, 'type' => 'string', 'single' => true));
-}
+// // Load assets for frontend
+// function shaiful_gutenberg_notice_block_frontend() {
 
-add_action('init', 'myBlockMeta');
-*/
-
-/**
- * custom gutenberg block.
- */
-//require get_template_directory() . './gutenberg.php';
+//    wp_enqueue_style(
+//       'gutenberg-notice-block-editor',
+//       plugins_url( 'block.css', __FILE__ ),
+//       array()
+//    );
+// }
+// add_action( 'wp_enqueue_scripts', 'shaiful_gutenberg_notice_block_frontend' );
